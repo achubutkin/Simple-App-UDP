@@ -1,0 +1,82 @@
+
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url('../fonts/Roboto-Regular.woff') format('woff'), url('../fonts/Roboto-Regular.ttf')  format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto-Light';
+    src: url('../fonts/Roboto-Light.woff') format('woff'), url('../fonts/Roboto-Light.ttf')  format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}  
+
+body {
+    /* change on future to Roboto-Regular */
+    font-family: 'Roboto-Light';
+}
+  
+/*
+   statusbar-overlay sets the background color for the overlay. Black text is the default when the statusbar plugin is not added. When the
+   statusbar plugin is added, it also adds default setting to make the content white via:
+
+       <preference name="StatusBarStyle" value="lightcontent"/>
+
+   Setting the background color to black will allow the default light content (white text/icons) to show on it. The statusbar plugin is included
+   in the config.xml file and will be added by the CLI when you build locally.
+
+   See https://github.com/apache/cordova-plugin-statusbar
+*/
+
+.statusbar-overlay {
+    background: #000000;
+}
+
+.panel-overlay {
+    transition: visibility 0 linear .4s,opacity .4s cubic-bezier(.4,0,.2,1);
+}
+
+.panel {
+    transform-style: preserve-3d;
+    transition-delay: .1s;
+    transition-duration: .2s;
+    transition-property: transform,left;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+}
+
+body.with-panel-left-cover .panel, body.with-panel-right-cover .panel {
+    box-shadow: none;
+}
+
+.navbar-fixed .navbar, .navbar-through .navbar {
+    box-shadow: none;
+}
+
+.navbar .center, .subnavbar .center {
+    font-size: 16px;
+}
+
+.uk-section-primary {
+    background: #1e87f0;
+}
+
+.navbar, .subnavbar, .toolbar {
+    background: #28a5f5;    
+}
+
+.console {
+    background: #000;
+    color: rgb(253, 104, 104);
+    width: 100%;
+    position: absolute;
+    top: 56px;
+    bottom: 48px;
+    border: 0;
+    margin: 0;
+    padding: 16px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
